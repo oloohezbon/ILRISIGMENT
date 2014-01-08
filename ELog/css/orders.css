@@ -1,0 +1,141 @@
+#orders_nav
+{
+	background: #FFFFFF;
+        padding-left: 2px;
+}
+#personel_nav
+{
+	background: #3498DB;
+}
+.All_,.All_a,.All_archvd,.All_late{
+    color: #666666;
+    
+    line-height: 12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: 100%;
+    padding-right: 3%;
+   float: right;
+    margin-left:  6px;
+    margin-top: 6px;
+}
+.noti_bubble {
+      /* This breaks the div from the normal HTML document. */
+  /* position:absolute;*/
+top: -8px;
+right:-6px;
+padding-right:2px;
+background-color:red;
+color:white;
+font-weight:bold;
+font-size:0.80em;
+
+border-radius:2px;
+box-shadow:1px 1px 1px gray;
+width: 9%;
+float: left;
+
+}
+#mak,#imeg{
+ float: left;  
+ 
+}
+#imeg{
+    margin-left:  6px;
+}
+#_tender{
+  background: #8BAE1B;
+  color:#FFFFFF;
+  cursor: pointer;
+  
+  -moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+        padding: 4px;
+        float: right;
+        width: 95%;
+       margin: 3px;
+}
+#retenderico{
+    width: 20px;
+}
+#add_tender{
+     width: 95%;
+    float: right;
+    background: -moz-linear-gradient(center top , #FFFFFF, #CCCCCC) repeat scroll 0 0 transparent;
+  
+    background-image: -webkit-gradient(linear, center top, right bottom, color-stop(0, #FFFFFF), color-stop(1, #CCCCCC));
+    background-image: -ms-gradient(linear, center top, right bottom, color-stop(0, #FFFFFF), color-stop(1, #CCCCCC));
+    /* background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #FFFFFF), color-stop(1, #00A3EF));
+   */ 
+    border: 1px solid #AAAAAA;
+    border-radius: 20px 20px 20px 20px;
+    display: block;
+    padding: 2px;
+    margin: 3px;
+    margin-top: 6px;
+}
+li{
+    list-style: none;
+}
+#all_proj{
+    margin-left: 5%;
+}
+.page_t{
+    background: #8BAE1B;
+}
+#tasks_nav
+{
+	background: #7F8C8D;
+}
+#inventory_nav
+{
+	background: #8E44AD;
+}
+#equipment_nav
+{
+	background: #2ECC71;
+}
+#reports_nav
+{
+	background: #C0392B;
+}
+
+/* all context menus have this class */
+      .context-menu {
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+
+        background-color: #f2f2f2;
+        border: 1px solid #999;
+
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      .context-menu a {
+        display: block;
+        padding: 3px;
+        text-decoration: none;
+        color: #333;
+      }
+      .context-menu a:hover {
+        background-color: #666;
+        color: white;
+      }
+
+      /* second context menu */
+      #context-menu-2 {
+        border: 1px solid #333;
+        background-color: #F1C40F;
+        margin: 0;
+        padding: 0;
+      }
+
+body #view_more_details {
+    /* new custom width */
+    width: 950px;
+    /* must be half of the width, minus scrollbar on the left (30px) */
+    margin-left: -475px;
+}

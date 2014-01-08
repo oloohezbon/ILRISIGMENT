@@ -1,0 +1,68 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Description of oath
+ *
+ * @author User
+ */
+class Oath extends CI_Controller {
+    //put your code here
+    
+    
+    public function index()
+	{
+		
+		         $config['hostname'] = "196.0.27.18";
+$config['username'] = "root";
+$config['password'] = "kapsadmin";
+$config['database'] = "mombasa_mmc";
+$config['dbdriver'] = "mysql";
+$config['dbprefix'] = "";
+$config['pconnect'] = FALSE;
+$config['db_debug'] = TRUE;
+$config['cache_on'] = FALSE;
+$config['cachedir'] = "";
+$config['char_set'] = "utf8";
+$config['dbcollat'] = "utf8_general_ci";
+if($this->load->database($config)==TRUE){
+   // return TRUE;
+   echo '!';
+}else{
+	$msg = $this->db->_error_message();
+  $num = $this->db->_error_number();
+    echo $msg;
+}
+        $this->load->library("session");
+            $this->load->model("location");
+            $data["query"]=$this->location->Get_Mach();
+            $data["pnd"]=$this->location->Get_Machine();
+            $datas=$this->location->Login();
+            //echo $datas;
+            $unames= $this->input->post("name");
+            if($datas>0)
+            {
+                    $newdata = array(
+                   'username'  => $unames,
+                   
+                   'logged_in' => TRUE
+               );
+$this->session->set_userdata($newdata);
+
+              $this->load->view('dashboard',$data);  
+              
+            }
+            else
+            {
+             $this->load->view('login_err',$data);   
+            }
+		//$this->load->view('viewdata',$data);
+	}
+    
+}
+
+?>
