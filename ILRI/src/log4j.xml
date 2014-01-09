@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+  <appender name="A1" class="org.apache.log4j.RollingFileAppender">
+    
+    <param name="File"   value="logs/ilri.log" />
+    <param name="Append" value="true" />
+
+	<param name="MaxFileSize" value="3MB" />
+	<param name="MaxBackupIndex" value="300" />
+    
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d [%t] %-5p %c - %m%n"/>
+    </layout>
+
+	<filter class="org.apache.log4j.varia.LevelRangeFilter">
+		<param name="LevelMin" value="DEBUG"/>
+		<param name="LevelMax" value="DEBUG"/>
+		<param name="AcceptOnMatch" value="true"/>
+	</filter>
+    
+  </appender>
+  
+  <appender name="A2" class="org.apache.log4j.RollingFileAppender">
+  
+    <param name="File" value="logs/ilriwarnlog.log" />
+    <param name="Append" value="true" />
+	
+	<param name="MaxFileSize" value="3MB" />
+	<param name="MaxBackupIndex" value="300" />
+	
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d [%t] %-5p %c - %m%n"/>
+    </layout>
+	
+	<filter class="org.apache.log4j.varia.LevelRangeFilter">
+		<param name="LevelMin" value="WARN"/>
+		<param name="LevelMax" value="WARN"/>
+		<param name="AcceptOnMatch" value="true"/>
+	</filter>
+	
+  </appender>
+  
+  <logger name="x.y">
+    <level value="TRACE" />
+    <appender-ref ref="A1" />
+	<appender-ref ref="A2" />
+  </logger>
+  
+  <root>
+    <priority value ="FATAL" />
+  </root>
+  
+</log4j:configuration>

@@ -84,24 +84,54 @@ public class ilriprocessor implements Runnable {
                     
                      String[] res=liner.split(",");
                   out.println("#############################RESULT##################################");
+                  ilr.save_tofile("#############################RESULT##################################");
                   out.println("Global Positioning System Fix Data Simulation");
+                  ilr.save_tofile("Global Positioning System Fix Data Simulation");
+                 
                  out.println("TIME OF DATA(UTC): =" +""+res[1].substring(0, 2)+":"+res[1].substring(2, 3)+res[1].substring(3, 4)+":"+res[1].substring(4, res[1].length()));
+                 ilr.save_tofile("TIME OF DATA(UTC): =" +""+res[1].substring(0, 2)+":"+res[1].substring(2, 3)+res[1].substring(3, 4)+":"+res[1].substring(4, res[1].length()));
+                 
                  out.println("LATITUDE OF POSITION: =" +""+res[2]+""+res[3]);
+                 ilr.save_tofile("LATITUDE OF POSITION: =" +""+res[2]+""+res[3]);
+             
                  out.println("POLE: =" +""+res[3]);
+                 ilr.save_tofile("POLE: =" +""+res[3]);
+           
                  out.println("LONGITUDE: =" +""+res[4]+""+res[5]);
+                 ilr.save_tofile("LONGITUDE: =" +""+res[4]+""+res[5]);
+          
                  out.println("POLE: =" +""+res[5]);
+                ilr.save_tofile("POLE: =" +""+res[5]);
+           
                  out.println("GPS QUALITY: =" +""+res[6]);
+                ilr.save_tofile("GPS QUALITY: =" +""+res[6]);
+      
                  out.println("NO. OF SATELITES IN USE: =" +""+res[7]);
+               ilr.save_tofile("NO. OF SATELITES IN USE: =" +""+res[7]);
+   
                  out.println("HORIZONTAL DILUTION POSITION: =" +""+res[8]);
+                ilr.save_tofile("HORIZONTAL DILUTION POSITION: =" +""+res[8]);
+ 
                  out.println("ATENNAE ALTITUDE: =" +""+res[9]+""+res[10]);
+                ilr.save_tofile("ATENNAE ALTITUDE: =" +""+res[9]+""+res[10]);
+  
                  out.println("GEOIDAL SEPERATION: =" +""+res[11]+""+res[12]);
+                ilr.save_tofile("GEOIDAL SEPERATION: =" +""+res[11]+""+res[12]);
+  
                  out.println("AGE SINCE LAST UPDATE FROM DIFF: =" +""+res[13]+" seconds");
-                 String[] diff=res[14].split("*");
-                 out.println("DIFF REF. STATION ID: =" +""+diff[0]);
-                 out.println("CHEKSUM: =" +""+diff[1]);
-                 out.println("POSINTION: =(" +""+res[2]+""+res[3]+","+res[4]+""+res[5]+") AT "+""+res[1].substring(0, 2)+":"+res[1].substring(2, 3)+res[1].substring(3, 4)+":"+res[1].substring(4, res[1].length()));
-                  out.println("#############################END OF RESULT##################################\n\r\n\r");
-            out.flush();  
+                ilr.save_tofile("AGE SINCE LAST UPDATE FROM DIFF: =" +""+res[13]+" seconds");
+     
+                 out.println("DIFF REF. STATION ID: =" +""+res[14]);
+                 ilr.save_tofile("DIFF REF. STATION ID: =" +""+res[14]);
+       
+                 out.println("POSINTION: =(" +""+res[2]+""+res[3]+","+res[4]+""+res[5]+")");
+                 ilr.save_tofile("POSINTION: =(" +""+res[2]+""+res[3]+","+res[4]+""+res[5]+")");
+          
+                 out.println("#############################END OF RESULT##################################");
+                 out.println("::PROCESSING COMPLETE INPUT NMEA STRING/PASTE TO SIMULATE LARGE INPUT\n\r\n\r");
+            ilr.save_tofile("#############################END OF RESULT##################################\n\r\n\r");
+      
+                 out.flush();  
                 }
                 else
                 {
