@@ -1,12 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ilri;
 
 /**
  *
- * @author luther
+ * @author hezbon
  */
 import java.io.*;
 import java.text.*;
@@ -29,7 +26,7 @@ public class ilrilogger extends FileOutputStream
         super(file, true);
         fos = new FileOutputStream(file, true);
         inner = new PrintStream(fos, true);
-        println("\n\rSYSTEM INITIALIZED\n\r");
+        
     }
     
     public ilrilogger(String name) throws FileNotFoundException
@@ -69,7 +66,7 @@ public class ilrilogger extends FileOutputStream
     public ilrilogger()
     {
         super(new FileDescriptor());
-        println("\n\rSYSTEM INITIALIZED\n\r");
+       // println("\n\rSYSTEM INITIALIZED\n\r");
     }
     
     public void reset()
@@ -151,7 +148,7 @@ public class ilrilogger extends FileOutputStream
             }
             if(mon > 100)
             {
-                //Reset the output buffer: let hope we are not writting into it
+               
                 baos.reset();
             }
         }

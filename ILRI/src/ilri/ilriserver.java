@@ -5,6 +5,7 @@
 package ilri;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Vector;
@@ -19,7 +20,7 @@ public class ilriserver extends Thread {
     public Vector handlers = new Vector();
     public ServerSocket serverSocket = null;
     public int port;
-    
+     public PrintWriter out;
     public ILRI ilri;
     
     //initialize the class
@@ -43,7 +44,7 @@ public class ilriserver extends Thread {
                 socket = serverSocket.accept();
                 //a thread for every connection
                 
-                System.out.println("New connection started on port: " + port);
+                System.out.println("New Client Recieved Here: " + port);
             
                Thread process = new Thread(new ilriprocessor(this));
                 process.setDaemon(false);
